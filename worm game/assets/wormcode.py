@@ -6,7 +6,7 @@ import pygame
 pygame.init()
 
 # Screen dimensions
-width, height = 1460, 900
+width, height = 1600, 800
 
 # Set up screen
 screen = pygame.display.set_mode((width, height))
@@ -45,9 +45,9 @@ def save_highscore(score, filename="snakehigh1.txt"):
 # Game modes
 modes = {
      "Very Easy": {"cell_size": 100, "tick": 1},
-    "Easy": {"cell_size": 80, "tick": 7},
-    "Medium": {"cell_size": 60, "tick": 10},
-    "Hard": {"cell_size": 40, "tick": 14}
+    "Easy": {"cell_size": 80, "tick": 4},
+    "Medium": {"cell_size": 50, "tick": 7},
+    "Hard": {"cell_size": 40, "tick": 10}
 }
 
 def select_mode():

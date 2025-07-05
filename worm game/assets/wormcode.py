@@ -14,7 +14,7 @@ pygame.display.set_caption("W O R M")
 clock = pygame.time.Clock()
 
 # Load and store unscaled images
-snake_img_orig = pygame.image.load("worm.png")
+snake_img_orig = pygame.image.load("wormbody.png")
 background_img = pygame.image.load("dirt.png")
 food_img_orig = pygame.image.load("appel.png")
 

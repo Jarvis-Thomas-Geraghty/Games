@@ -1,0 +1,55 @@
+Data dictionary
+
+
+#  Game Configuration
+width, height: int – Screen dimensions (1600x800)
+screen: pygame.Surface – Main display surface
+clock: pygame.time.Clock – Regulates frame timing
+
+#  Image Assets
+snake_img_orig: pygame.Surface – Unscaled snake image ("worm.png")
+background_img: pygame.Surface – Scaled background image ("dirt.png")
+food_img_orig: pygame.Surface – Unscaled food image ("appel.png")
+snake_img: pygame.Surface – Snake image scaled to cell_size (created in main)
+food_img: pygame.Surface – Food image scaled to cell_size (created in main)
+
+#  Audio Assets
+eat_sound: pygame.mixer.Sound – Sound when food is eaten ("crunch.wav")
+death_sound: pygame.mixer.Sound – Sound on game over ("explosion.wav")
+start_sound: pygame.mixer.Sound – Intro sound before countdown ("321.mp3")
+background.mp3 – Music looped throughout gameplay
+
+#  High Score Persistence
+snakehigh1.txt – External file storing the high score
+load_highscore(): function – Reads high score from file
+save_highscore(score): function – Saves high score to file
+
+#  Game Modes
+modes: dict – Difficulty settings mapping names to cell_size and tick
+    {
+        "Very Easy": {"cell_size": 100, "tick": 1},
+        ...
+    }
+
+#  UI & Selection
+mode_buttons: list – Rectangles for mode selection buttons
+play_again_rect: pygame.Rect – Button to replay after game over
+quit_rect: pygame.Rect – Button to quit after game over
+
+#  Game State (within main)
+cell_size: int – Grid cell size, based on difficulty
+tick_speed: int – Game loop speed (frames per second)
+cols, rows: int – Grid dimensions derived from screen size and cell_size
+score: int – Tracks player's score
+snake: list[tuple] – Coordinates of snake segments
+snake_dir: tuple[int, int] – Movement direction vector
+food: tuple[int, int] – Position of food item
+new_head: tuple[int, int] – Snake’s next head position
+
+#  Utility Functions
+select_mode(): function – Handles game mode UI selection
+countdown(): function – Displays start countdown animation
+draw_sprite(image, position, cell_size): function – Draws sprite at grid location
+draw_score(score): function – Displays score text on screen
+game_over(score): function – Handles game-over UI and logic
+main(): function – Core gameplay loop (called at script end)

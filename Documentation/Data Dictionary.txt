@@ -28,7 +28,9 @@ save_highscore(score): function – Saves high score to file
 modes: dict – Difficulty settings mapping names to cell_size and tick
     {
         "Very Easy": {"cell_size": 100, "tick": 1},
-        ...
+        "Easy": {"cell_size": 80, "tick": 4},
+        "Medium": {"cell_size": 50, "tick": 7},
+        "Hard": {"cell_size": 40, "tick": 10}
     }
 
 #  UI & Selection
